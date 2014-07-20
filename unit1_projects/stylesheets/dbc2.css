@@ -1,0 +1,82 @@
+body {
+  font: serif;
+  background-color: #869E54;
+  color: #0F0F40;
+  }
+ul {
+  list-style: none;
+}
+nav ul {
+  float: right;
+}
+nav li {
+  display: inline-block;
+}
+.column {
+  width: 48%;
+  float:left;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 10em;
+  height: 20em;
+  background-color: #E2E1B3;
+}
+.contentarea {
+  margin-top: 2em;
+  padding-left: 5em;
+  padding-right: 5em;
+  background-color: #E2E1B3;
+}
+.centerpane {
+  width: 50em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  text-align: center;
+  background-color: #E2E1B3;
+}
+footer {
+  padding-left: 5em;
+  padding-right: 5em;
+  background-color: #E2E1B3;
+}
+h1,h3 {
+  font: sans-serif;
+}
+#pizzaimage img {
+  width: 90%
+}
+#pizzaimage p {
+  position: absolute;
+  top: 33em;
+}
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+/* For IE 6/7 only */
+.clear {
+    *zoom: 1;
+}
+.round {
+  -moz-border-radius: .7em;
+  -webkit-border-radius: .7em;
+  border-radius:.7em;
+}
+a:link {
+  color: #3E1D6F;
+}
+a:visited {
+  color: #168487;
+}
+a:hover {
+  color: #E2E1B3;
+}
