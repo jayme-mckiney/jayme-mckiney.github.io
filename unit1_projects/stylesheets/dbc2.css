@@ -17,6 +17,8 @@ nav li {
   float:left;
 }
 .sidebar {
+  padding: .5em;
+  border: solid .1em #0F0F40;
   position: fixed;
   left: 0;
   top: 10em;
@@ -24,6 +26,8 @@ nav li {
   background-color: #E2E1B3;
 }
 .contentarea {
+  border: solid .1em #0F0F40;
+
   margin-top: 2em;
   padding-left: 5em;
   padding-right: 5em;
@@ -36,10 +40,14 @@ nav li {
 }
 
 header {
+  border: solid .1em #0F0F40;
   text-align: center;
   background-color: #E2E1B3;
+  padding: 1em;
 }
 footer {
+  border: solid .1em #0F0F40;
+  margin-top: 2em;
   padding-left: 5em;
   padding-right: 5em;
   background-color: #E2E1B3;
