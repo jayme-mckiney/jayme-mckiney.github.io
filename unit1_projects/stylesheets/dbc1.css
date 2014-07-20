@@ -1,0 +1,61 @@
+body {
+  background: #008A8A;
+  margin: 0;
+}
+div.header {
+  background: #007bff;
+  background-image: url('../images/headerBgDbc1.png');
+  background-position: bottom;
+  height: 10em;
+  padding: 0;
+}
+#banner {
+  float: left;
+}
+#navbar {
+  text-align: right;
+  position: relative;
+  top: 7em;
+  padding-right: 1em;
+}
+#navbar li {
+  list-style: none;
+  display: inline-block;
+}
+div.content {
+  margin: 3em;
+}
+.column {
+  width: 30%;
+  float: left;
+  padding-right: 1em;
+}
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+/* For IE 6/7 only */
+.clear {
+    *zoom: 1;
+}
+.round {
+  -moz-border-radius: .7em;
+  -webkit-border-radius: .7em;
+  border-radius:.7em;
+}
+#sisyphus {
+  float: right;
+}
+#bannerbg {
+  height: 10em;
+}
+ol {
+  font: times;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, sans-serif;
+}
