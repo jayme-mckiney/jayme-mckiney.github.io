@@ -16,28 +16,26 @@ nav li {
   width: 48%;
   float:left;
 }
-.sidebar {
+aside {
+  float: left;
   padding: .5em;
   border: solid .1em #0F0F40;
-  position: fixed;
-  left: 0;
-  top: 10em;
   height: 20em;
   background-color: #E2E1B3;
+  width: 15%;
+}
+.main {
+  margin-top: 2em;
 }
 .contentarea {
+  float: right;
   border: solid .1em #0F0F40;
-
-  margin-top: 2em;
-  padding-left: 5em;
-  padding-right: 5em;
+  width: 70%;
+  padding-left: 2em;
+  padding-right: 2em;
   background-color: #E2E1B3;
 }
-.centerpane {
-  width: 50em;
-  margin-right: auto;
-  margin-left: auto;
-}
+
 
 header {
   border: solid .1em #0F0F40;
@@ -70,6 +68,9 @@ h1,h3 {
 .clear:after {
     clear: both;
 }
+.clear {
+  clear: both;
+}
 /* For IE 6/7 only */
 .clear {
     *zoom: 1;
@@ -86,5 +87,5 @@ a:visited {
   color: #168487;
 }
 a:hover {
-  color: #E2E1B3;
+  text-decoration: none;
 }
