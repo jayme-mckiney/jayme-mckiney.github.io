@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jayme's home page</title>
+    <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/stylesheet2.0.css" />
+    <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/inlineblock.css" />
+  </head>
+  <body>
+    <header>
+      <div id="me"></div>
+      <h1>My Corner of the Tubes.</h1>
+      <nav><ul>
+        <li><a href="http://jayme-mckiney.github.io">Home</a></li>
+        <li><a href="http://jayme-mckiney.github.io/about.html">About</a></li>
+        <li><a href="mailto:jayme.mckiney@gmail.com">Contact</a></li>
+      </ul></nav>
+    </header>
+    <section>
+      <h2>Inline block vs Inline</h2>
+
+      <h3>Display Inline</h3>
+      <p>When an element has an inline display that element takes up the amount of horizontal space that it's contents visually uses, assuming the element has no margin, padding or borders to account for.  This means that we can have multiple elements appear on the same line and is the reason for the existence of the line break tag &ltbr /&gt.  It is also important to note that when an element is displayed inline it will not compute padding correctly.</p>
+
+      <div class="example">
+        <h6>CSS test code</h6>
+      <code>
+        .inlinedemo {<br />
+          background-color:#FF6201;<br />
+          display: inline;<br />
+          margin: 1em;<br />
+          padding: 1em;<br />
+        }<br />
+        .inlineblock {<br />
+          background-color:#FF6201;<br />
+          display: inline-block;<br />
+          margin: 1em;<br />
+          padding: 1em;<br />
+        }<br />
+      </code>
+      </div>
+
+      <div class="example">
+        <h6>HTML test code</h6>
+      <code>&lt;div class=&quot;inline-blockdemo&quot;&gt;<br />
+        Lorem ipsum dolor sit amet<br />
+        &lt;/div&gt;&lt;br /&gt;<br />
+        &lt;div class=&quot;inlinedemo&quot;&gt;<br />
+        Lorem ipsum dolor sit amet<br />
+        &lt;/div&gt;&lt;br /&gt;<br />
+        &lt;div class=&quot;inlineblockdemo&quot;&gt;<br />
+        Lorem ipsum dolor sit amet<br />
+        &lt;/div&gt;&lt;br /&gt;</code>
+      </div>
+
+      <div class="example">
+        <h6>Results of the code</h6>
+      <div class="inblockdemo">Lorem ipsum dolor sit amet</div><br />
+      <div class="inlinedemo">Lorem ipsum dolor sit amet</div><br />
+      <div class="inblockdemo">Lorem ipsum dolor sit amet</div><br />
+      </div>
+
+      <div class="example">
+        <h6>Properly computed padding</h6>
+      <div class="inblockdemo">Lorem ipsum dolor sit amet</div><br />
+      <div class="inblockdemo">Lorem ipsum dolor sit amet</div><br />
+      <div class="inblockdemo">Lorem ipsum dolor sit amet</div><br />
+      </div>
+
+      <h3>What is Block</h3>
+      <p>In CSS a block element is an element which takes up all of the horizontal space that is available to it creating a line break after the element.  Some examples of this are &ltdiv&gt, &lth1&gt, and &ltp&gt tags.  Of course using CSS you can make any element function like a block element by simply changing its display setting for example a span.</p>
+      <div class="example">
+          <h6>Display Block CSS code</h6>
+        <code>
+          span {<br />
+            display: block;<br />
+          } <br />
+        </code>
+      </div>
+      <div class="example">
+        <h6>With the CSS</h6>
+      <span class="block hilight">Causes these spans</span>
+      <span class="block hilight">to behave like a div!</span>
+      </div>
+      <div class="example">
+        <h6>Without the CSS</h6>
+        <br>
+      <span class="hilight">Causes these spans</span>
+      <span class="hilight"><strike>to behave like a div!</strike></span>
+      <br>
+      <br>
+      </div>
+
+      <h3>Inline Block</h3>
+      <p>The idea of inline block is to create an element that will behave like an inline element where the flow of the document is concerned and behave like a block element where the inside of that element is concerned. Take these &ltdiv&gt elements displayed in both inline-block and inline.</p>
+      <div class="example">
+      <code>
+        <h6>Test Code</h6>
+        &ltdiv&gt <br>
+        lorem ipsum&ltbr /&gt <br>
+        lorem ipsum&ltbr /&gt <br>
+        &lt/div&gt <br>
+        &ltdiv&gt <br>
+        lorem ipsum&ltbr /&gt <br>
+        lorem ipsum&ltbr /&gt <br>
+        &lt/div&gt
+      </code>
+      </div>
+      <div class="example">
+        <h6>Inline Block</h6>
+        <div class="inblock hilight">
+        Lorem ipsum <br>
+        Lorem ipsum <br>
+        </div>
+        <div class="inblock hilight">
+        Lorem ipsum <br>
+        Lorem ipsum <br>
+        </div>
+      </div>
+
+      <div class="example">
+        <h6>Inline</h6>
+      <div class="inline hilight">
+      Lorem ipsum <br>
+      Lorem ipsum <br>
+      </div>
+      <div class="inline hilight">
+      Lorem ipsum <br>
+      Lorem ipsum <br>
+      </div>
+      </div>
+      <p>As you can see the inline-block &ltdiv&gt handles the line break only by breaking the line for its own container whereas the inline element breaks the line for both containers.</p>
+    </section>
+  </body>
+</html>

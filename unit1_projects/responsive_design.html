@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css" charset="utf-8"/>
+    <title>Responsive Design and Fluid Layouts</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Responsive Design and Fluid Layouts</h1>
+      <h3>Hydrodynamics as applied to the internet.</h3>
+      <h4>By: Juan Mendez and Jayme McKiney</h4>
+    </header>
+
+    <main>
+    <div class="column">
+    <article class="responsive-design">
+        <h3>Responsive Design</h3>
+        <p>
+        With the emergence of more and more devices with different form factors and resolutions its increasingly difficult to accomadate every possible visitor with the old practice of specific mobile sites.  This has lead to the creation of Responsive Design.  Responsive Design is not a single piece of technology, but rather, a set of techniques and ideas that form a whole.<a href="#1"><sup>1</sup></a>  The three main techniques behind responsive design are fluid grids, flexible images, and media  queries.<a href="#2"><sup>2</sup></a>
+        </p>
+        <p>
+        The idea of a fluid grid is that rather than base the layout of the site on an arbitrary number of pixels, the layout will be based on the size of the window available.  This is achieved by assigning containers width and height values of a corresponding percentage to match the planned layout.
+        </p>
+        <p>
+        The simplest way to achieve flexible images is simply to create fluid images.  This is done much in the same way that we create a fluid grid, we tell all image tags to take up 100% of their container element and make that element sized properly in the fluid grid.<a href="#3"><sup>3</sup></a>
+        </p>
+        <p>
+        The inclusion of media queries is essentially what separates a responsive design from a site that is just a fluid grid layout.  Media queries allow you to discover the resolution of the device used and conditionally apply different CSS styles.  For instance if your layout calls for two columns on a standard resolution, it might change the design to only one column for mobile devices.
+        </p>
+        <p>
+        So in conclusion, responsive design enables you to create site layouts that respond to changing screen resolutions. With fluid grids and flexible images, the content gets displayed proportionally to the screen as the resolution changes. And with media queries, you can set conditions by which the layout might change based on the device that's being used or the resolution of the window.
+        </p>
+    </article>
+    </div>
+
+    <div class="column">
+    <article class="fluid-layouts">
+        <h3>Fluid Layouts</h3>
+        <p>Fluid Layouts are designed in terms of proportions as opposed to fixed pixel values. As a viewing area expands or shrinks to fit a particular device or screen, the layout's elements resize in relation to one another.<a href="#1"><sup>1</sup></a>
+        </p>
+
+        <p>As designers increasingly encountered the shortcomings of a fixed-width layout, web design evolved to more readily incorporate fluid layouts. A couple of examples of the downsides to fixed-width layouts are apparent when the screen is considerably larger than 960 pixels or considerably smaller than 960 pixels.<a href="#4"><sup>4</sup></a>
+        </p>
+
+        <p>
+        In the former case, the website layout gets engulfed by extra space. In the latter, the content is not fully displayed, and the user has to resort to inconvenient scrollbars to view the entire site. And it gets especially inconvenient to navigate this way when using devices with touchscreens. Both scenarios render aesthetically unpleasing layouts and suboptimal user interaction.
+        <a href="#5"><sup>5</sup></a>
+        </p>
+
+
+    </article>
+    </div>
+
+    <div class="column">
+    <article class="your-conclusion">
+        <h3>Conclusion</h3>
+        <p>The use of Fluid layout is a powerful tool in the web developers arsenal, however there are a few potentially serious downsides involved.  But, when used with the other tools involved with Responsive design these downsides can be easily avoided.</p>
+    </article>
+
+    <article class="reflection">
+        <h3>Reflection</h3>
+        <p>I found the concepts of Responsive design fairly easy to implement on a small scale.  Though I would imagine as the page gets more and more complex the numbers get harder and harder to balance.</p>
+        <p>I believe smartphones and their tablet counterpart have heavily impacted the world of web design through there resolution constrictions and there altered means of interaction.  I believe technology will continue to alter web design especially in terms of the way you interact with the page with the emergence of wearable tech like Googleglass.</p>
+        <p>I imagine visually impaired people largely use the web with the help of screen reading software, which is why having a proper document outline to you html with the proper use of headers and other html5 is important.</p>
+        <p></p>
+      <ul>
+        <li>How was it to implement these concepts?</li>
+        <li>How do you think smartphones and tablets have changed web design? How do you think new technology will change web design in the future?</li>
+        <li>How do you think visually impaired people use the web? Can they? Should we design and development for them?</li>
+        <li>What ideas and concepts have resonated with you when learning about the web and design? What seems stupid or doesn't make sense?</li>
+      </ul>
+    </article>
+    </div>
+    </main>
+
+    <footer class="references">
+        <ol>
+            <li id='1'><a href="http://blog.teamtreehouse.com/beginners-guide-to-responsive-web-design">Beginners guide to responsive web design</a></li>
+            <li id='2'><a href="http://alistapart.com/article/responsive-web-design">Responsive web design</a></li>
+            <li id='3'><a href="http://alistapart.com/article/fluid-images">Fluid Images</a></li>
+            <li id='4'><a href="http://www.smashingmagazine.com/2009/06/02/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/">Fixed vs Fluid vs Elastic layouts</a></li>
+            <li id='5'><a href="http://www.sitepoint.com/responsive-web-design-fluid-layouts/">Responsive Web Design: Fluid Layouts</a></li>
+
+        </ol>
+    </footer>
+
+  </body>
+</html>

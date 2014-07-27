@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  background-color: #92959D;
+  font-size: 16px;
+  font-family: sans-serif;
+  letter-spacing: .1em;
+}
+
+header {
+  position: relative;
+  margin: 0;
+  margin-bottom: 2em;
+  border-bottom: solid .1em black;
+  padding: 2em;
+  height: 7em;
+  background-color: #CCE7F0;
+  background-image: url('../images/tubes.png');
+  background-repeat:no-repeat;
+  background-position:right;
+  background-size: contain;
+}
+nav {
+  position: absolute;
+  bottom: .5em;
+  left: 2em;
+  border-top: solid 1px black;
+  padding: .5em;
+}
+nav li {
+  display: inline;
+  margin-right: .5em;
+  margin-left: .5em;
+}
+
+
+section {
+  background-color: #CCE7F0;
+  border: solid .1em black;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin: auto;
+  width: 80%;
+  min-width: 22em;
+  max-width: 50em;
+  -moz-border-radius: .7em;
+  -webkit-border-radius: .7em;
+  border-radius:.7em;
+}
+
+
+h1 {
+  margin-top: 1em;
+  font-size: 225%;
+  text-align: center;
+  font-family: serif;
+  letter-spacing: .1em;
+}
+h2 {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 175%;
+  font-family: serif;
+  letter-spacing: .1em;
+}
+h3 {
+  margin-top: 1em;
+  margin-left: 2em;
+  font-size: 150%;
+  font-family: serif;
+  letter-spacing: .1em;
+}
+h4 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 150%;
+  font-family: serif;
+  letter-spacing: .1em;
+}
+h6 {
+  /*font-weight: bold;*/
+  font-size: 100%;
+  font-family: serif;
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.column {
+  float: left;
+  width:50%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.column ul {
+  text-align: center;
+  margin-top: 1em;
+}
+
+
+#me {
+  position: relative;
+  top: -1em;
+  left: 1em;
+  float: left;
+  height: 6em;
+  width: 6em;
+  border: solid 1px black;
+  -moz-border-radius: 3em;
+  -webkit-border-radius: 3em;
+  border-radius: 3em;
+  background-image: url('https://secure.gravatar.com/avatar/6838f4bf6114358bd3bc69182ef8332a.png?r=PG&d=mm&s=120');
+  background-size: contain;
+}
+
+code {
+  display: block;
+  font-size: 80%;
+}
+a:link {
+  color: #FF6201;
+  text-decoration: none;
+}
+a:visited {
+  color: #FF8501;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-align: justify;
+  margin-top: 1em;
+  line-height: 150%;
+  letter-spacing: .1em;
+}
+
+.shrink {
+  width: 100%;
+}
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+@media screen and (max-width: 480px) {
+
+  .column {
+    width: 100%;
+    float: none;
+  }
+}

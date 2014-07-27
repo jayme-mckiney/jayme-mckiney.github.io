@@ -1,0 +1,39 @@
+/*inline block tutorial*/
+.hilight {
+    background-color:#FF6201;
+    margin:.5em;
+    text-align: center;
+    padding: 1em;
+}
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+  padding: 0;
+}
+.inblock {
+  display: inline-block;
+}
+.inlinedemo {
+  background-color:#FF6201;
+  display: inline;
+  margin: 1em;
+  padding: 1em;
+}
+.inblockdemo {
+  background-color:#FF6201;
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+}
+.example {
+  display: inline-block;
+  border: dotted .1em #FF6201;
+  padding: 1em;
+  margin: 1em;
+  -moz-border-radius: .7em;
+  -webkit-border-radius: .7em;
+  border-radius:.7em;
+}
+/*end tutorial classes*/
