@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #92959D;
+  font-size: 16px;
 }
 
 header {
@@ -11,6 +12,10 @@ header {
   padding: 2em;
   height: 5em;
   background-color: #CCE7F0;
+  background-image: url('../images/tubes.png');
+  background-repeat:no-repeat;
+  background-position:right;
+  background-size: contain;
 }
 
 
@@ -18,9 +23,13 @@ section {
   background-color: #CCE7F0;
   border: solid .1em black;
   padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
   float: left;
   margin: 0;
   width: 65%;
+  min-width: 30em;
+  max-width: 50em;
   -moz-border-radius: .7em;
   -webkit-border-radius: .7em;
   border-radius:.7em;
@@ -29,9 +38,12 @@ aside {
   background-color: #CCE7F0;
   border: solid .1em black;
   padding: .5em;
-  float: right;
+  float: left;
   margin: 0;
-  width: 25%;
+  margin-left: 1em;
+  width: 10%;
+  min-width: 10em;
+  max-width: 20em;
   -moz-border-radius: .7em;
   -webkit-border-radius: .7em;
   border-radius:.7em;
@@ -48,6 +60,29 @@ footer {
   height: 3em;
   background-color: #CCE7F0;
 }
+
+h1 {
+  font-size: 200%;
+}
+h2 {
+  text-align: center;
+  font-size: 175%;
+}
+h3 {
+  margin-left: 2em;
+  font-size: 150%
+}
+h6 {
+  font-size: 90%;
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+code {
+  display: block;
+  font-size: 80%;
+}
 a:link {
   color: #FF6201;
   text-decoration: none;
@@ -59,9 +94,12 @@ a:hover {
   text-decoration: underline;
 }
 
+p {
+  text-align: justify;
+}
+
 .content {
   padding-left: 3em;
-  padding-right: 3em;
 }
 /*
   ========================================
@@ -79,5 +117,70 @@ a:hover {
 .group {
   clear: both;
   *zoom: 1;
+}
+.hilight {
+    background-color:#FF6201;
+    margin:.5em;
+    text-align: center;
+    padding: 1em;
+}
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+  padding: 0;
+}
+.inblock {
+  display: inline-block;
+}
+.inlinedemo {
+  background-color:#FF6201;
+  display: inline;
+  margin: 1em;
+  padding: 1em;
+}
+.inblockdemo {
+  background-color:#FF6201;
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+}
+.example {
+  display: inline-block;
+  border: dotted .1em #FF6201;
+  padding: 1em;
+  margin: 1em;
+  -moz-border-radius: .7em;
+  -webkit-border-radius: .7em;
+  border-radius:.7em;
+}
+
+
+@media screen and (max-width: 50em) {
+  section{
+    float: none;
+    width:80%;
+    min-width: 30em;
+    margin: auto;
+  }
+  aside {
+    position: fixed;
+    top:0;
+    right: 2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+  .content {
+    padding-left: 0;
+  }
+  aside ul {
+    margin: 0;
+    padding: 0;
+  }
+  aside li {
+    display: inline;
+    margin-left: 1em;
+  }
 }
 
