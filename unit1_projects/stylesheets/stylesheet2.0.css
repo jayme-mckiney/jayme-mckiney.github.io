@@ -41,7 +41,6 @@ section {
   padding-right: 2em;
   margin: auto;
   width: 80%;
-  min-width: 22em;
   max-width: 50em;
   -moz-border-radius: .7em;
   -webkit-border-radius: .7em;
@@ -158,6 +157,14 @@ p {
 }
 
 @media screen and (max-width: 480px) {
+
+  header {
+    height: 10em;
+  }
+
+  section {
+    width: 100%;
+  }
 
   .column {
     width: 100%;
