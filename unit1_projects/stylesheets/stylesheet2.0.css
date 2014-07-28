@@ -162,10 +162,6 @@ p {
     height: 10em;
   }
 
-  section {
-    width: 95%;
-  }
-
   .column {
     width: 100%;
     float: none;
