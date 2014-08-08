@@ -47,6 +47,13 @@ section {
   border-radius:.7em;
 }
 
+pre {
+  margin: 1em;
+  margin-left: 4em;
+  border-left: solid .1em #FF6201;
+  padding: .5em;
+  padding-left: 1em;
+}
 
 h1 {
   margin-top: 1em;
@@ -95,7 +102,6 @@ h6 {
   text-align: center;
   margin-top: 1em;
 }
-
 
 #me {
   position: relative;
