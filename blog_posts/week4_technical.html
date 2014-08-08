@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jayme's home page</title>
+    <title>Jayme's blog: Loops and Ruby</title>
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/reset.css" />
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/stylesheet2.0.css" />
   </head>
@@ -16,9 +16,122 @@
       </ul></nav>
     </header>
       <section>
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis vitae quae quod provident aliquam neque, iusto ad ipsa architecto fugiat, hic illo sunt accusamus rem quis fugit quisquam odit nam.</p>
+        <h2>Looping in Ruby</h2>
+        <h3>Basic looping</h3>
+        <p>Ruby as a programming language has a cornucopia of different syntax to do just about any task you can think of trying to do.  This is definitely the case for the topic of looping.  For those unfamiliar with the concept of looping it's like the name implies the act of looping over a segment of code repeatedly to achieve a desired outcome.  In most programming languages the number of loops available to the programmer is three, while, for, and do while.</p>
+<pre><code>while(condition) do
+  # code to loop through
+end
 
+begin
+  # code to loop through
+end while(condition)
+
+// NOT Ruby syntax
+for(variable declaration; condition; variable alteration) {
+  // code to loop through
+}
+</code></pre>
+        <p>The while loop is the simplest form of loop offered it acts much like an if statement except the block of code will keep repeating while the given condition evaluates as true.  The do while loop functions similarly except that it will not evaluate the condition until the end of the execution of the block of code and this will obviously effect the amount of loops that the code will make.  Finally there is the for loop, this is the more robust of the normal looping options given to a programmer.  The for loop's condition usually contains three sections, the declaration of the loop variable, the condition, and the loop variables alteration statement.  However this is not the structure used in ruby you will find that below.  A common usage of the for loop is to iterate over an array like below and as you can see the ruby version is fair bit simplified, but it comes at the cost of write access to the items.  We will go over how to alter the array while we loop later.</p>
+<pre><code>// Javascript
+for(var i = 0; i &lt array.length; i ++) {
+  dosomething( array[i] );
+}
+
+# Ruby
+for i in array do
+  dosomething i
+end
+</code></pre>
+        <p>However in ruby there is more than twice this base number of methods.  This can make it confusing as to which type should be used for a given application.  It is important to remember that for the most part these different looping methodologies perform in a the same manner and the choice of which to use should largely come down to a simple question of which option makes the code more human readable, since this is the real reason why ruby has all of these options for looping and most other tasks for that matter.</p>
+        <h3>To infinity and beyond</h3>
+        <p>One of the simplest variations of a loop in ruby is simply called loop, it performs an infinite loop, meaning the block of code will continue executing indefinitely until explicitly told to stop via break or return.  If you have never encountered it before the break command simply kicks the execution of the code out of the current block.  You might use this form of loop if the logical point to evaluate and exit your loop is at neither the top or bottom but somewhere in the middle of the block of code you wish to loop through.</p>
+<pre><code># normally written as
+while(true) do
+  # some code to execute
+  if (condition)
+    break
+  end
+  # some more code
+end
+
+# in ruby
+loop do
+  # some code
+  if condition
+    break
+  end
+  # some more code
+end
+</code></pre>
+      <h3>Until its not</h3>
+      <p>Another option that is essentially a slightly modified while loop is the until loop.  The flow control of the until loop is identical to that of the while loop.  The only difference is that the until loop evaluates the condition and terminates the loop if the condition is false rather than if it is true.  This variant in particular is meant to make the code more human readable since the conditional symbol for not(!) can be rather easy to overlook.</p>
+<pre><code>while(!condition) do
+  # block of code
+end
+
+until(condition) do
+  # block of code
+end
+</code></pre>
+      <h3>For Arrays</h3>
+      <p>In other programming languages the for loop is the bread and butter when it comes to iterating over an array, however that is not the case in ruby.  Ruby has the enumerable module which makes life rather easy for a programmer who wants to go through their array.  To use this module we simply have to call the each method if we simply wish to read the items in the array or collect! if we wish to alter them.  </p>
+<pre><code># prints each element in the array
+for i in array do
+  puts i
+end
+
+# prints each element in the array
+array.each do |i|
+  puts i
+end
+
+# does nothing
+array.each do |i|
+  i += 1
+end
+
+# adds one to each element
+array.collect! do |i|
+  i += 1
+end
+
+# creates a new array with one added to each element
+new_array = array.collect do |i|
+  i += 1
+end
+</code></pre>
+      <p>You may notice the exclamation mark after collect which designates the method as destructive, meaning it will alter the contents of the array if we wished to form a new altered array we could simply use collect as I will show below.  It is important to note that the normal for loop structure in ruby will not allow you to modify the contents of the array unless they are a complex object in which case they will always be passed by reference rather than by value.</p>
+      <h3>Swiss Army Knife &lt Toolbox</h3>
+      <p>The next stop on our tour of looping methods is more variants of the for loop.  The traditional for loop is kind of like a swiss army knife its small handy and can be used in a vast amount of ways.  In ruby however a lot of that versatility has been removed in favor of giving the programmer a whole new box of tools to use in its place.  At some point you may need to execute a block of code a specified number of times.  When you encounter this ruby has a very simple way of handling this if you have no need of the index that would be included in the standard for loop.  The times do method of Fixnum will repeat its given block of code however many times specified by the Fixnum object that it is called on.  Both of the first two pieces of code below will print out Hello World 5 times.  Of course there may be a time when you will need the number associated with your loop like the last two bits of code.</p>
+<pre><code>#prints Hello World 5 times
+for i in 1..5 do
+  puts "Hello World"
+end
+
+# prints Hellow World 5 times
+5.times do
+  puts "Hello World"
+end
+
+# prints 0 to 4
+5.times do |i|
+  puts i
+end
+
+# prints the road trip song
+99.downto 1 do |i|
+  verse = i.to_s + " bottles of beer on the wall! " + i.to_s + " bottles of beer!\n"
+  verse += "If one of those bottles should happend to fall. " + (i -1).to_s + "bottles of beer on the wall."
+  puts verse
+end
+</code></pre>
+      <p>While the times do method is easily replicated with the for loop this is not the case with downto.  This is because a range of 99 to 1 in ruby written 99..1 doesn't contain any numbers because there are no numbers greater than 99 and less than 1.  This means the only way to achieve this in a for loop would be to do some simple math to your index something like the code below</p>
+<pre><code>for i in -99..-1 do
+  i = i * -1
+  #fun stuff
+end
+</code></pre>
       </section>
     </div>
   </body>
