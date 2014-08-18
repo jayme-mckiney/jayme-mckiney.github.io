@@ -20,7 +20,7 @@
         <h3>Object Oriented Programming</h3>
         <p>Object oriented programming is a powerful and simple tool for the arsenal of a developer.  At its core the idea of object oriented programming is that you describe your program in terms of one or more objects, self containing collections of methods and variables.  It has become the most prominent methodology of programming, although Functional programming has had a resurgence of advocacy lately.</p>
         <h3>When and how to be Classy</h3>
-        <p>Objects in ruby are an instance of a class.  The general idea behind when to use a class, as opposed to just a set of functions, is that you use a class to when the program or part of a program has a logical grouping of variables and methods that act on those variable.  The reason for this is basically that when you treat different parts of the program as compartmentalized stand alone machines that act upon there own data and release it via a given method, as opposed to a big bin of data to be accessed at will there tends to be less chance of a small mistake causing huge errors.  Today I will be describing a class based on real world objects to better illustrate the idea.  I will be using tanks, mostly because I couldn't think of a title more clever than class warfare.  The first thing we need to do in order to create a class is declare it.</p>
+        <p>Objects in ruby are an instance of a class.  The general idea behind when to use a class, as opposed to just a set of functions, is that you use a class when the program or part of a program has a logical grouping of variables and methods that act upon those variable.  The reason for this is basically that when you treat different parts of the program as compartmentalized stand alone machines that act upon there own data and release it via a given method, as opposed to a big bin of data to be accessed at will there tends to be less chance of a small mistake causing huge errors.  Today I will be describing a class based on real world objects to better illustrate the idea.  I will be using tanks, mostly because I couldn't think of a title more clever than class warfare.  The first thing we need to do in order to create a class is declare it.</p>
 <pre><code>class Tank
 
 end</code></pre>
@@ -35,8 +35,8 @@ end</code></pre>
 end
 
 myTank = Tank.new "Abrams", "M1A1", "120 mm", true
-=> #&ltTank:0x007f8de30df278 @make="Abrams", @model="M1A1", @cannon_size="120 mm"&gt</code></pre>
-        <p>Okay, now we have a constructor and we can actually create an instance of our class.  But as you can see from the code below you don't call the constructor with the name you gave method in your declaration you call the method new.</p>
+#=> #&ltTank:0x007f8de30df278 @make="Abrams", @model="M1A1", @cannon_size="120 mm"&gt</code></pre>
+        <p>Okay, now we have a constructor and we can actually create an instance of our class.  But as you can see from the code above you don't call the constructor with the name you gave the method in your declaration, you call the method new.</p>
         <h3>Behavioral Adjustment</h3>
         <p>Now that we have a constructor and we know how to create an instance of our class its time to truly make it an object since a true object has both a state(instance variables) and behavior(methods), after all if we just wanted the to store the data we could simply use a hash and be able to access it without writing accessor methods.  But why don't we write some accessor methods anyway since it isn't really hard and seems like a nice place to start.  We'll start with a method to modify the size of the cannon.</p>
 <pre><code>class Tank
@@ -46,10 +46,10 @@ myTank = Tank.new "Abrams", "M1A1", "120 mm", true
 end
 
 myTank.modify_cannon "130 mm"
-=> "130 mm"
+#=> "130 mm"
 myTank
-=> &ltTank:0x007fb6d43473c0 @make="Abrams", @model="M1A1", @cannon_size="130 mm"&gt</code></pre>
-        <p>The first thing you probably noticed is that I didn't include the constructor method from earlier.  There are two reasons for this the first of which is simply to clarify the new method that is being added, the second and larger reason is to illustrate that ruby allows you to extend any class you would like by simply adding or modifying methods like above.  So by adding the code from above to a ruby file or irb session that has the code with the constructor will combine into one class with both methods.</p>
+#=> &ltTank:0x007fb6d43473c0 @make="Abrams", @model="M1A1", @cannon_size="130 mm"&gt</code></pre>
+        <p>The first thing you probably noticed is that I didn't include the constructor method from earlier.  There are two reasons for this the first of which is simply to clarify the new method that is being added, the second and larger reason is to illustrate that ruby allows you to extend any class you would like by simply adding or modifying methods like above.  So by adding the code from above to a ruby file or irb session that already has our code with the constructor will combine into one class with both methods.</p>
         <h3>Privacy</h3>
         <p>Now that we have gone over the basics of adding methods to our class the next logical step is to discuss private vs public methods.  When making a public method that method can be called from outside of the class like our modify_cannon method.  However when making a method private it will only be usable from other methods inside the class.  To illustrate this lets give our class a new boolean value that tells if its operational and some methods to control that value</p>
 <pre><code>class Tank
