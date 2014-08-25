@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jayme's blog: </title>
+    <title>Jayme's blog: Blocks, Procs and Lambdas</title>
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/reset.css" />
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/stylesheet2.0.css" />
   </head>
@@ -16,9 +16,72 @@
       </ul></nav>
     </header>
       <section>
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis vitae quae quod provident aliquam neque, iusto ad ipsa architecto fugiat, hic illo sunt accusamus rem quis fugit quisquam odit nam.</p>
+        <h2>Blocks, Procs and Lambdas</h2>
+        <h3>What are they?</h3>
+        <p>All three of these things are examples of closures in ruby.  What this means in laymans terms it that they are ways of grouping code we plan on running.  So you might be wondering why the need for three different names if all three of them are closures.  The reason for this is that have some key differences in the way they behave and are used.</p>
+        <h3>Blocks</h3>
+        <p>Blocks are the most common closures in ruby.  If you have been playing in ruby long you have likely already used a block and just not known it.  Blocks are those little bits of code you typically feed to methods from the Enumerable module when using Arrays and Hashes like methods each, map or collect below.</p>
+<pre><code>some_array.collect! do |x|
+  x += 5
+end
+# alternatively
+some_array.collect! { |x|
+  x += 5
+}
+</code></pre>
+        <p>These methods work by passing the block like an argument to the function to be evaluated in the method.  To demonstrate exactly what is happening here lets make our own version of collect! for Array.  The code below adds a method to the Array class that will act just like collect! but under the name iterate!.</p>
+<pre><code>class Array
+  def iterate!
+    self.each_index do |i|
+      self[i] = yield self[i]
+    end
+  end
+end
 
+some_array.iterate! do |x|
+  x += 5
+end
+</code></pre>
+        <h3>Lambdas</h3>
+        <p>As you saw above a block is basically a function that you don't name, which is actually what lambdas are named for.  They are named after a form of calculus introduced in the 1930s to help simplify the semantics of computable functions.  However thats not really pertinent.  What is relevant is how and why you might use a lambda and the most common reason would be as part of the eternal struggle to stay DRY(Don't Repeat Yourself) while programming.  Lets say you have two or more arrays in the same segment of code that requires the same operation to every member.  You could make two calls to collect! repeating the same block both times or you could create a lambda and pass that lambda to both calls.</p>
+<pre><code>lam = lambda do |x|
+  x += 5
+end
+some_array.collect! &lam
+some_other_array.collect! &lam
+
+# alternative lambda declaration
+alt_lam = ->(x){x += 5}
+</code></pre>
+        <p>The later of the lambda declarations is similar to the form of calculus that its named after.</p>
+        <h3>Procs</h3>
+        <p>Proc stands for procedure.  These are another type of block that you can assign a name.  However the syntax of a Proc is different from that of a lambda.  Lets do the same thing using a Proc that we just did with our lambda code.</p>
+<pre><code>proc = Proc.new do |x|
+  x += 5
+end
+some_array.collect! &proc
+some_other_array.collect! &proc
+</code></pre>
+        <h3>Lambda vs Procs</h3>
+        <p>You may be wondering what the difference between a lambda and Proc actually is, especially if you've done something like this:</p>
+<pre><code>lambda{ |x| x += 5 }.class
+Proc.new { |x| x += 5 }.class
+</code></pre>
+        <p>If you ran that code you know that both are instances of the Proc class.  While lambda is technically an instance of the Proc class it actually does behave differently than an object made through Proc.new.  The main difference is in the way the two handle the use of return.  When dealing with a lambda ruby will treat the code as though it is method without a name, meaning the use of return will cause the code to exit from the lambda and return to the context that called the lambda.  <strike>With a Proc ruby will behave as though the Proc is simply a snippet of code it has been asked to process and when return is encountered it will exit from the Proc and the context that called the Proc.</strike>  With a Proc in ruby 2.0 a LocalJumpError will be raised if you attempt to call a Proc that has a return statement</p>
+<pre><code>def returnTest code
+  code.call
+  return "returned from returnTest"
+end
+returnTest Proc.new { return "returned from Proc" }
+returnTest lambda { return "returned from lambda" }
+</code></pre>
+        <h3>Methods as blocks</h3>
+        <p>One final thing to note about blocks in Ruby is that if you already have a function defined and want to use that in a method that requires a block you can actually pass that function with the right syntax.</p>
+<pre><code>def plusFive num
+  num += 5
+end
+some_array.collect! &method(:plusFive)
+</code></pre>
       </section>
     </div>
   </body>
