@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jayme's blog: </title>
+    <title>Jayme's blog: SQL vs NoSQL</title>
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/reset.css" />
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/stylesheet2.0.css" />
   </head>
@@ -16,9 +16,14 @@
       </ul></nav>
     </header>
       <section>
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis vitae quae quod provident aliquam neque, iusto ad ipsa architecto fugiat, hic illo sunt accusamus rem quis fugit quisquam odit nam.</p>
-
+        <h2>SQL vs NoSQL</h2>
+        <p>Both of these technologies at their core serve the same purpose.  That is to store large amounts of data to be used by a software application.  However they work in very different ways and each has their own strengths and weaknesses.</p>
+        <h3>SQL</h3>
+        <p>SQL is a term synonymous with relational databases and has been the standard for data storage for decades at this point.  This is partly because SQL systems are built around the idea of being <a href="http://en.wikipedia.org/wiki/ACID">ACID</a>, which in a nutshell means that the system is reliability focused.  Not to mention the fact that SQL allows the use of complex queries using a standardized language.  These two things make SQL ideal for storing simple interconnecting structures</p>
+        <p>However there are also some drawbacks associated with SQL one of which is the danger of SQL injection.  This is when a malicious user includes some arbitrary SQL statements in the text fields provided which will be written into the database.  If done properly the user can cause the normal add or update statement to end prematurely and then trick the system into running their code, for instance dropping one or all of the tables or in an extreme case allowing them to collect the systems data.  However this can be avoided with the simple sanitation of user defined input for the database, essentially just checking to ensure there is no SQL in your user input.  The other downside to SQL databases is the higher cost of scalability due to the need for vertical scaling(more powerful computers).  This inflames the issue that the structured approach of relational databases begins to cause poor performance as the data volumes get larger</p>
+        <h3>NoSQL</h3>
+        <p>NoSQL is pretty new to the scene comparatively and has come about largely because of the money saving potential possible via horizontal scaling(distributed computing) with the falling price of less powerful computer systems.  Different NoSQL systems use various means to facilitate the spread of their data a crossed multiple systems including document, graph or key value based methods.  This move away from the rigid structure of relational databases makes NoSQL systems ideal for handling data which is prone to changing in structure, like that of a user session or a content storage</p>
+        <p>One of the larger problems with NoSQL is that it's just not as well suited for complex queries as its SQL counterpart.  This is exasperated by its lack of a standardized interface from one system to the next.  Also since all of these systems are constructed differently there is no portability from one system to the next so once the system is in place you are largely stuck with your decision barring major overhaul.  Another problem represented by these systems is the usual decision to compromise consistency in favor of availability, and partitioning(<a href="http://en.wikipedia.org/wiki/CAP_theorem">CAPS theorem</a>).  Or in non-nerd speak they sacrifice reliability for speed.  Finally possibly the largest problem with these systems is the mere fact that they are largely still in there infancy and therefore not as well supported as there SQL counterpart</p>
       </section>
     </div>
   </body>
