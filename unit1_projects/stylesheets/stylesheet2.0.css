@@ -47,6 +47,14 @@ section {
   border-radius:.7em;
 }
 
+section ul {
+  margin-left: 5em;
+  margin-top: 1em;
+}
+section ul li {
+  margin-top: .5em;
+}
+
 pre {
   margin: 1em;
   margin-left: 4em;
