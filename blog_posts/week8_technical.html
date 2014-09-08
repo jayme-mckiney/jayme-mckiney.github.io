@@ -39,7 +39,7 @@ end
 </pre></code>
         <p>When counting operations to determine an algorithms Big O time complexity since we are largely concerned with the upper bounds we are mostly concerned with loops.  A single loop will usually mean a time complexity of O(n) whereas a nested loop like above usually means a worse case scenario of O(n^2) since we are performing the actions in the loop n*n times.</p>
         <h3>Space Complexity</h3>
-        <p>Space complexity describes the amount of memory needed to contain the data structures used by an algorithm.  Since bubblesort is an in place sorting algorithm its big O space complexity is O(n) or more specifically O(2n) for the non-destructive method since we create a copy of the original array.</p>
+        <p>Space complexity describes the amount of memory needed to contain the data structures used by an algorithm.  Since bubblesort is an in place sorting algorithm its big O space complexity is O(n) or more specifically O(2n) for the non-destructive method since we create a copy of the original array.  However if we were discussing a bucket sort, that requires additional data structures causing it to be O(nk) where k is the number of "buckets" you plan to use for the sort.</p>
       </section>
     </div>
   </body>
