@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jayme's blog: </title>
+    <title>Jayme's blog: Big O Notation</title>
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/reset.css" />
     <link rel="stylesheet" type="text/css" href="../unit1_projects/stylesheets/stylesheet2.0.css" />
   </head>
@@ -16,9 +16,30 @@
       </ul></nav>
     </header>
       <section>
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis vitae quae quod provident aliquam neque, iusto ad ipsa architecto fugiat, hic illo sunt accusamus rem quis fugit quisquam odit nam.</p>
+        <h2>Big O Notation and Complexity</h2>
+        <p>In the world of computer science Big O notation is used to describe the efficiency of an algorithm in terms of time and memory usage.
+        These two things are usually described as time and space complexity.  This notation is written in the form of an algebraic function that describes the performance of the algorithm with a given number of items.  Big O notation can be used to describe the best, average or worst case performance scenario.</p>
+        <h3>Time Complexity</h3>
+        <p>Time complexity describes the amount of operations that an algorithm will use as the amount of items in the data structure being operated on increases towards infinity.  Lets look at for example a standard sorting algorithm used on arrays, bubblesort is a best case scenario O(n) and worst case scenario of O(n^2).</p>
+<code><pre>
+module BubbleSort
+  def self.sort(keys)
+    sort!(keys.clone)
+  end
 
+  def self.sort!(keys)
+    0.upto(keys.size-1) do |i|
+      (keys.size-1).downto(i+1) do |j|
+        (keys[j], keys[j-1] = keys[j-1], keys[j]) if keys[j] < keys[j-1]
+      end
+    end
+    keys
+  end
+end
+</pre></code>
+        <p>When counting operations to determine an algorithms Big O time complexity since we are largely concerned with the upper bounds we are mostly concerned with loops.  A single loop will usually mean a time complexity of O(n) whereas a nested loop like above usually means a worse case scenario of O(n^2) since we are performing the actions in the loop n*n times.</p>
+        <h3>Space Complexity</h3>
+        <p>Space complexity describes the amount of memory needed to contain the data structures used by an algorithm.  Since bubblesort is an in place sorting algorithm its big O space complexity is O(n) or more specifically O(2n) for the non-destructive method since we create a copy of the original array.</p>
       </section>
     </div>
   </body>
