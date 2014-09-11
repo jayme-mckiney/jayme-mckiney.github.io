@@ -1,13 +1,13 @@
 $(document).ready( function() {
     $.ajax({
-    url: "nav_menu.html",
+    url: "http://jayme-mckiney.github.io/nav_menu.html",
     cache: false
   }).done(function( html ) {
-      array = html.split('<br>');
+      var array = html.split('<br>');
 
-      var menus = $( ".menu" );
-      menus[0].append( array[0] );
-      menus[1].append( array[1]);
+      $( ".menu" ).each( function(index) {
+        $(this).append(array[index]);
+      });
     });
 
   $('.menu').hover(function() {

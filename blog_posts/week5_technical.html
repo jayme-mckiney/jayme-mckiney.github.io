@@ -11,7 +11,13 @@
       <h1>My Corner of the Tubes.</h1>
       <nav><ul>
         <li><a href="http://jayme-mckiney.github.io">Home</a></li>
-        <li><a href="http://jayme-mckiney.github.io/about.html">About</a></li>
+        <li class='menu'>
+          <a class='collapsed'>Blog</a>
+        </li>
+        <li class='menu'>
+          <a class="collapsed">Projects</a>
+        </li>
+        <li><a href="about.html">About</a></li>
         <li><a href="mailto:jayme.mckiney@gmail.com">Contact</a></li>
       </ul></nav>
     </header>
@@ -80,5 +86,7 @@ end</code></pre>
         <p>With this code and the private designator above the set_operational method if we attempt to call the method we get an error that reads "NoMethodError: private method `set_operational' called for #&ltTank:0x007fb6d43473c0&gt".  However when calling the repair or break_down method the set_operational method performs perfectly.  Granted these methods are kind of silly, but lets say this tank class was going to be part of a video game then we would definitely not want the operational variable to be accessible outside the object as it might be used as an exploit.</p>
       </section>
     </div>
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src='scripts/menu.js'></script>
   </body>
 </html>

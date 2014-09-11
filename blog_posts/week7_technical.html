@@ -11,7 +11,13 @@
       <h1>My Corner of the Tubes.</h1>
       <nav><ul>
         <li><a href="http://jayme-mckiney.github.io">Home</a></li>
-        <li><a href="http://jayme-mckiney.github.io/about.html">About</a></li>
+        <li class='menu'>
+          <a class='collapsed'>Blog</a>
+        </li>
+        <li class='menu'>
+          <a class="collapsed">Projects</a>
+        </li>
+        <li><a href="about.html">About</a></li>
         <li><a href="mailto:jayme.mckiney@gmail.com">Contact</a></li>
       </ul></nav>
     </header>
@@ -26,5 +32,7 @@
         <p>One of the larger problems with NoSQL is that it's just not as well suited for complex queries as its SQL counterpart.  This is exasperated by its lack of a standardized interface from one system to the next.  Also since all of these systems are constructed differently there is no portability from one system to the next so once the system is in place you are largely stuck with your decision barring major overhaul.  Another problem represented by these systems is the usual decision to compromise consistency in favor of availability, and partitioning(<a href="http://en.wikipedia.org/wiki/CAP_theorem">CAPS theorem</a>).  Or in non-nerd speak they sacrifice reliability for speed.  Finally possibly the largest problem with these systems is the mere fact that they are largely still in there infancy and therefore not as well supported as there SQL counterpart</p>
       </section>
     </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src='scripts/menu.js'></script>
   </body>
 </html>
