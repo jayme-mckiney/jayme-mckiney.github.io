@@ -27,11 +27,29 @@ nav {
   padding: .5em;
 }
 nav li {
-  display: inline;
+  float:left; list-style-type:none;
   margin-right: .5em;
   margin-left: .5em;
 }
 
+nav ul ul { display:none;
+            width:100%;
+            position:absolute;
+            left:0;
+            top:10;
+            background:#CCE7F0;
+            border:solid .1em black;
+            -moz-border-radius: .7em;
+            -webkit-border-radius: .7em;
+            border-radius: .7em;
+            padding: 1em;
+
+}
+nav ul ul li { float:none; }
+
+.menu {
+  color: #FF6201
+}
 
 section {
   background-color: #CCE7F0;
@@ -125,6 +143,7 @@ h6 {
   background-image: url('https://secure.gravatar.com/avatar/6838f4bf6114358bd3bc69182ef8332a.png?r=PG&d=mm&s=120');
   background-size: contain;
 }
+
 
 code {
   display: block;
