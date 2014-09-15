@@ -12,7 +12,7 @@ header {
   margin-bottom: 2em;
   border-bottom: solid .1em black;
   padding: 2em;
-  height: 7em;
+  height: 8.5em;
   background-color: #CCE7F0;
   background-image: url('../images/tubes.png');
   background-repeat:no-repeat;
@@ -21,7 +21,7 @@ header {
 }
 nav {
   position: absolute;
-  bottom: .5em;
+  bottom: 0;
   left: 2em;
   border-top: solid 1px black;
   padding: .5em;
@@ -34,13 +34,23 @@ nav {
   background-color: #CCE7F0;
   position: fixed;
   top: 1em;
-  left: 2em;
-  height: 1em;
+  left: 0;
   padding-top: .5em;
   padding-bottom: .5em;
+  bottom: auto;
 }
+.fixednav li {
+  float: none;
+  margin: 0;
+  margin-bottom: .2em;
+}
+.fixednav li:last {
+  margin-bottom: 0;
+}
+
 nav li {
   float:left; list-style-type:none;
+  text-align: center;
   margin-right: .5em;
   margin-left: .5em;
 }
@@ -57,6 +67,124 @@ nav ul ul { display:none;
 
 }
 nav ul ul li { float:none; }
+
+/*icons for nav menu*/
+#homeicon {
+  background: url("../../imgs/spritemap.png") -60px 0px;
+  height: 60px;
+  width: 60px;
+}
+#blogicon {
+  background: url("../../imgs/spritemap.png") 0px 0px;
+  height: 60px;
+  width: 60px;
+}
+#projecticon {
+  background: url("../../imgs/spritemap.png") -120px 0px;
+  height: 60px;
+  width: 60px;
+}
+#abouticon {
+  background: url("../../imgs/spritemap.png") -360px 0px;
+  height: 60px;
+  width: 60px;
+}
+#twittericon {
+  background: url("../../imgs/spritemap.png") -300px 0px;
+  height: 60px;
+  width: 60px;
+}
+#emailicon {
+  background: url("../../imgs/spritemap.png") -180px 0px;
+  height: 60px;
+  width: 60px;
+}
+#githubicon {
+  background: url("../../imgs/spritemap.png") -240px 0px;
+  height: 60px;
+  width: 60px;
+}
+#homeicon:hover {
+  background: url("../../imgs/spritemap.png") -60px 60px;
+}
+#blogicon:hover {
+  background: url("../../imgs/spritemap.png") 0px 60px;
+}
+#projecticon:hover {
+  background: url("../../imgs/spritemap.png") -120px 60px;
+}
+#abouticon:hover {
+  background: url("../../imgs/spritemap.png") -360px 60px;
+}
+#twittericon:hover {
+  background: url("../../imgs/spritemap.png") -300px 60px;
+}
+#emailicon:hover {
+  background: url("../../imgs/spritemap.png") -180px 60px;
+}
+#githubicon:hover {
+  background: url("../../imgs/spritemap.png") -240px 60px;
+}
+
+
+/* large icons for launch pad*/
+#blogiconlg {
+  background: url("../../imgs/spritemaplg.png") 0px 0px;
+  height: 120px;
+  width: 120px;
+}
+#projecticonlg {
+  background: url("../../imgs/spritemaplg.png") -240px 0px;
+  height: 120px;
+  width: 120px;
+}
+#abouticonlg {
+  background: url("../../imgs/spritemaplg.png") -720px 0px;
+  height: 120px;
+  width: 120px;
+}
+#twittericonlg {
+  background: url("../../imgs/spritemaplg.png") -600px 0px;
+  height: 120px;
+  width: 120px;
+}
+#emailiconlg {
+  background: url("../../imgs/spritemaplg.png") -360px 0px;
+  height: 120px;
+  width: 120px;
+}
+#githubiconlg {
+  background: url("../../imgs/spritemaplg.png") -480px 0px;
+  height: 120px;
+  width: 120px;
+}
+#blogiconlg:hover {
+  background: url("../../imgs/spritemaplg.png") 0px 120px;
+}
+#projecticonlg:hover {
+  background: url("../../imgs/spritemaplg.png") -240px 120px;
+}
+#abouticon:lghover {
+  background: url("../../imgs/spritemaplg.png") -720px 120px;
+}
+#twittericonlg:hover {
+  background: url("../../imgs/spritemaplg.png") -600px 120px;
+}
+#emailiconlg:hover {
+  background: url("../../imgs/spritemaplg.png") -360px 120px;
+}
+#githubiconlg:hover {
+  background: url("../../imgs/spritemaplg.png") -480px 120px;
+}
+
+.launchpad {
+  text-align: center;
+}
+.launchbuttons {
+  display: inline-block;
+  margin: 2em;
+  text-align: center;
+}
 
 .menu {
   color: #FF6201
@@ -93,8 +221,8 @@ pre {
 }
 
 h1 {
-  margin-top: 1em;
-  font-size: 225%;
+  margin-top: .5em;
+  font-size: 250%;
   text-align: center;
   font-family: serif;
   letter-spacing: .1em;
@@ -200,14 +328,56 @@ p {
   *zoom: 1;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1030px) {
+    section {
+    margin-left: 90px;
+    margin-right: auto;
+    width: 80%;
+  }
+}
 
+@media screen and (max-width: 700px) {
   header {
     height: 10em;
+  }
+}
+
+@media screen and (max-width: 590px) {
+
+  header {
+    height: 6em;
   }
 
   .column {
     width: 100%;
     float: none;
+  }
+
+  section {
+    margin-left: 90px;
+    margin-right: 5px;
+    width: auto;
+  }
+
+  nav {
+    border: solid .1em black;
+    -moz-border-radius: .7em;
+    -webkit-border-radius: .7em;
+    border-radius: .7em;
+    background-color: #CCE7F0;
+    position: absolute;
+    top: 12em;
+    left: 0em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    bottom: auto;
+  }
+  nav li {
+    float: none;
+    margin: 0;
+    margin-bottom: .2em;
+  }
+  nav li:last {
+    margin-bottom: 0;
   }
 }
