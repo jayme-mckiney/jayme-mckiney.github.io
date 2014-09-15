@@ -195,6 +195,10 @@ nav ul ul li { float:none; }
   color: #FF6201
 }
 
+.centered {
+  text-align: center;
+}
+
 section {
   background-color: #CCE7F0;
   border: solid .1em black;
