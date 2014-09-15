@@ -48,6 +48,11 @@ nav {
   margin-bottom: 0;
 }
 
+.fixednav ul ul {
+  left: 50px;
+  width: 20em;
+}
+
 nav li {
   float:left; list-style-type:none;
   text-align: center;
